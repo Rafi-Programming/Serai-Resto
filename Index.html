@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Serai Resto Sentul</title>
+<script src="https://cdn.tailwindcss.com"></script>
+
+<script>
+tailwind.config = {
+theme: {
+extend: {
+colors: {
+forest: '#1E3A2D',
+cream: '#FAF7F2',
+gold: '#C89B4B',
+soft: '#F2EEE7'
+}
+}
+}
+}
+</script>
+
+<style>
+html {
+scroll-behavior: smooth;
+}
+
+body {
+font-family: 'Inter', sans-serif;
+background: #FAF7F2;
+overflow-x: hidden;
+}
+
+.hero-bg {
+background:
+linear-gradient(rgba(20,35,28,0.58), rgba(20,35,28,0.58)),
+url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1800&q=80');
+background-size: cover;
+background-position: center;
+background-attachment: fixed;
+}
+
+.glass {
+backdrop-filter: blur(14px);
+background: rgba(255,255,255,0.08);
+border: 1px solid rgba(255,255,255,0.15);
+}
+
+.fade-up {
+opacity: 0;
+transform: translateY(40px);
+transition: all 0.9s ease;
+}
+
+.fade-up.show {
+opacity: 1;
+transform: translateY(0);
+}
+
+.card-hover {
+transition: all 0.35s ease;
+}
+
+.card-hover:hover {
+transform: translateY(-10px);
+box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+}
+
+.menu-img {
+height: 250px;
+object-fit: cover;
+}
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header class="fixed w-full top-0 z-50 bg-white/95 backdrop-blur-lg shadow-sm">
+<nav class="max-w-7xl mx-auto flex justify-between items-center px-6 py-5">
+<div>
+<h1 class="text-2xl font-bold text-forest">Serai Resto</h1>
+<p class="text-xs text-gold tracking-[0.25em] uppercase">Sentul</p>
+</div>
+
+<div class="hidden md:flex gap-10 text-sm font-medium text-gray-700">
+<a href="#home" class="hover:text-gold transition">Home</a>
+<a href="#features" class="hover:text-gold transition">Features</a>
+<a href="#menu" class="hover:text-gold transition">Menu</a>
+<a href="#reservation" class="hover:text-gold transition">Reservation</a>
+</div>
+</nav>
+</header>
+
+<!-- HERO -->
+<section id="home" class="hero-bg min-h-screen flex items-center pt-32 md:pt-35">
+<div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+
+<div class="text-white fade-up">
+<p class="tracking-[0.35em] uppercase text-sm text-gold mb-5">
+Serai Love iVe Story
+</p>
+
+<h2 class="text-5xl md:text-7xl font-bold leading-tight">
+Nikmati Kelezatan Kuliner Sunda Tradisional di Tengah Alam Sentul
+</h2>
+
+<p class="mt-8 text-lg text-gray-200 leading-relaxed max-w-xl">
+Restoran keluarga ramah anak dengan playground luas, live music, serta area gathering eksklusif berkapasitas besar untuk setiap momen spesial Anda.
+</p>
+
+<a href="#reservation"
+class="inline-block mt-10 bg-gold hover:bg-yellow-600 transition px-8 py-4 rounded-full text-white font-semibold shadow-lg">
+Reservasi Meja Sekarang
+</a>
+</div>
+
+<div class="glass rounded-3xl p-10 text-white fade-up">
+<div class="grid grid-cols-2 gap-8">
+<div>
+<h3 class="text-5xl font-bold text-gold">500+</h3>
+<p class="mt-2 text-gray-200">Tamu Harian</p>
+</div>
+<div>
+<h3 class="text-5xl font-bold text-gold">4.9</h3>
+<p class="mt-2 text-gray-200">Customer Rating</p>
+</div>
+<div>
+<h3 class="text-5xl font-bold text-gold">100+</h3>
+<p class="mt-2 text-gray-200">Corporate Event</p>
+</div>
+<div>
+<h3 class="text-5xl font-bold text-gold">Everyday</h3>
+<p class="mt-2 text-gray-200">Live Experience</p>
+</div>
+</div>
+</div>
+
+</div>
+</section>
+
+<!-- FEATURES -->
+<section id="features" class="py-24 bg-soft">
+<div class="max-w-7xl mx-auto px-6">
+
+<div class="text-center mb-16 fade-up">
+<h2 class="text-5xl font-bold text-forest">Pengalaman Bersantap Premium</h2>
+<p class="mt-5 text-gray-600 max-w-2xl mx-auto">
+Dirancang untuk menghadirkan kenyamanan, kehangatan, dan pengalaman kuliner berkelas.
+</p>
+</div>
+
+<div class="grid md:grid-cols-3 gap-10">
+
+<div class="bg-white rounded-3xl p-10 card-hover fade-up">
+<h3 class="text-2xl font-semibold text-forest mb-4">
+Nuansa Alam & Estetik
+</h3>
+<p class="text-gray-600 leading-relaxed">
+Area hijau yang menenangkan dengan suasana terbuka yang cocok untuk quality time.
+</p>
+</div>
+
+<div class="bg-white rounded-3xl p-10 card-hover fade-up">
+<h3 class="text-2xl font-semibold text-forest mb-4">
+Kids-Friendly Playground
+</h3>
+<p class="text-gray-600 leading-relaxed">
+Ruang bermain luas dan aman agar keluarga menikmati waktu santai tanpa khawatir.
+</p>
+</div>
+
+<div class="bg-white rounded-3xl p-10 card-hover fade-up">
+<h3 class="text-2xl font-semibold text-forest mb-4">
+Area Gathering Luas
+</h3>
+<p class="text-gray-600 leading-relaxed">
+Ideal untuk gathering kantor, family reunion, arisan, dan berbagai acara komunitas.
+</p>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- MENU -->
+<!-- MENU -->
+<section id="menu" class="py-24 bg-cream">
+<div class="max-w-7xl mx-auto px-6">
+
+<div class="text-center mb-16 fade-up">
+<h2 class="text-5xl font-bold text-forest">Highlight Menu</h2>
+</div>
+
+<div class="grid md:grid-cols-3 gap-10">
+
+<!-- Nasi Liwet -->
+<div class="bg-white rounded-3xl overflow-hidden card-hover fade-up">
+<img class="menu-img w-full"
+src="https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=900&q=80">
+<div class="p-8">
+<h3 class="text-2xl font-semibold">Pasta Serai</h3>
+<p class="text-gold font-semibold mt-3">Rp 185.000</p>
+</div>
+</div>
+
+<!-- Ayam Presto -->
+<div class="bg-white rounded-3xl overflow-hidden card-hover fade-up">
+<img class="menu-img w-full"
+src="https://images.unsplash.com/photo-1608039755401-742074f0548d?auto=format&fit=crop&w=900&q=80">
+<div class="p-8">
+<h3 class="text-2xl font-semibold">Ayam Presto Serai</h3>
+<p class="text-gold font-semibold mt-3">Rp 58.000</p>
+</div>
+</div>
+
+<!-- Es Kopi Susu -->
+<div class="bg-white rounded-3xl overflow-hidden card-hover fade-up">
+<img class="menu-img w-full"
+src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=900&q=80">
+<div class="p-8">
+<h3 class="text-2xl font-semibold">Espresso</h3>
+<p class="text-gold font-semibold mt-3">Rp 28.000</p>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- RESERVATION -->
+<section id="reservation" class="py-24 bg-forest text-white">
+<div class="max-w-4xl mx-auto px-6 fade-up">
+
+<div class="text-center mb-12">
+<h2 class="text-5xl font-bold">Reservasi Sekarang</h2>
+<p class="mt-4 text-gray-300">
+Pesan meja Anda dengan cepat melalui WhatsApp
+</p>
+</div>
+
+<div class="bg-white/10 backdrop-blur-lg rounded-3xl p-10">
+<div class="grid md:grid-cols-2 gap-6">
+
+<input id="name" type="text" placeholder="Nama Lengkap" class="p-4 rounded-xl text-black">
+<input id="phone" type="tel" placeholder="Nomor HP" class="p-4 rounded-xl text-black">
+<input id="datetime" type="datetime-local" class="p-4 rounded-xl text-black">
+<input id="guests" type="number" placeholder="Jumlah Tamu" class="p-4 rounded-xl text-black">
+
+<select id="event" class="p-4 rounded-xl text-black md:col-span-2">
+<option>Makan Biasa</option>
+<option>Family Gathering</option>
+<option>Arisan</option>
+<option>Acara Kantor</option>
+</select>
+
+<button onclick="sendWA()"
+class="bg-gold hover:bg-yellow-600 transition py-4 rounded-xl md:col-span-2 font-semibold text-lg">
+Kirim Reservasi
+</button>
+
+</div>
+</div>
+
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-black text-gray-400 py-10">
+<div class="max-w-7xl mx-auto px-6 text-center">
+<p>Karang Tengah, Babakan Madang, Bogor</p>
+<p class="mt-2">10.00 — 22.00 WIB</p>
+<p class="mt-5 text-gold">
+Designed & Developed by First Garage Web Developer
+</p>
+</div>
+</footer>
+
+<script>
+function sendWA() {
+const name = document.getElementById('name').value;
+const phone = document.getElementById('phone').value;
+const datetime = document.getElementById('datetime').value;
+const guests = document.getElementById('guests').value;
+const event = document.getElementById('event').value;
+
+const message =
+`Halo Serai Resto Sentul, saya ingin melakukan reservasi:
+- Nama: ${name}
+- No.HP: ${phone}
+- Tanggal/Jam: ${datetime}
+- Jumlah Tamu: ${guests} Orang
+- Keperluan: ${event}`;
+
+window.open(`https://wa.me/62816338513?text=${encodeURIComponent(message)}`, '_blank');
+}
+
+const observer = new IntersectionObserver(entries => {
+entries.forEach(entry => {
+if(entry.isIntersecting){
+entry.target.classList.add('show');
+}
+});
+});
+
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
