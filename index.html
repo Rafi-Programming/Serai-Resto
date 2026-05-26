@@ -246,26 +246,29 @@ Pesan meja Anda dengan cepat melalui WhatsApp
 <div class="bg-white/10 backdrop-blur-lg rounded-3xl p-10">
 <div class="grid md:grid-cols-2 gap-6">
 
-<input id="name" type="text" placeholder="Nama Lengkap" class="p-4 rounded-xl text-black">
-<input id="phone" type="tel" placeholder="Nomor HP" class="p-4 rounded-xl text-black">
-<input id="datetime" type="datetime-local" class="p-4 rounded-xl text-black">
-<input id="guests" type="number" placeholder="Jumlah Tamu" class="p-4 rounded-xl text-black">
+<input id="name" type="text" placeholder="Nama Lengkap" required class="p-4 rounded-xl text-black">
 
-<select id="event" class="p-4 rounded-xl text-black md:col-span-2">
+<input id="phone" type="tel" placeholder="Nomor HP" required class="p-4 rounded-xl text-black">
+
+<input id="datetime" type="datetime-local" required class="p-4 rounded-xl text-black">
+
+<input id="guests" type="number" placeholder="Jumlah Tamu" min="1" required class="p-4 rounded-xl text-black">
+
+<select id="event" required class="p-4 rounded-xl text-black md:col-span-2">
+<option value="">Pilih Jenis Acara</option>
 <option>Makan Biasa</option>
 <option>Family Gathering</option>
 <option>Arisan</option>
 <option>Acara Kantor</option>
 </select>
 
-<button onclick="sendWA()"
+<button onclick="validateAndSend()"
 class="bg-gold hover:bg-yellow-600 transition py-4 rounded-xl md:col-span-2 font-semibold text-lg">
 Kirim Reservasi
 </button>
 
 </div>
 </div>
-
 </div>
 </section>
 
@@ -282,13 +285,13 @@ Designed & Developed by First Garage Web Developer
 
 <script>
 function sendWA() {
-const name = document.getElementById('name').value;
-const phone = document.getElementById('phone').value;
-const datetime = document.getElementById('datetime').value;
-const guests = document.getElementById('guests').value;
-const event = document.getElementById('event').value;
+    const name = document.getElementById('name').value;
+    const phone = document.getElementById('phone').value;
+    const datetime = document.getElementById('datetime').value;
+    const guests = document.getElementById('guests').value;
+    const event = document.getElementById('event').value;
 
-const message =
+    const message =
 `Halo Serai Resto Sentul, saya ingin melakukan reservasi:
 - Nama: ${name}
 - No.HP: ${phone}
@@ -296,15 +299,35 @@ const message =
 - Jumlah Tamu: ${guests} Orang
 - Keperluan: ${event}`;
 
-window.open(`https://wa.me/62816338513?text=${encodeURIComponent(message)}`, '_blank');
+    window.open(`https://wa.me/62816338513?text=${encodeURIComponent(message)}`, '_blank');
+}
+
+function validateAndSend() {
+    const name = document.getElementById('name').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+    const datetime = document.getElementById('datetime').value;
+    const guests = document.getElementById('guests').value;
+    const event = document.getElementById('event').value;
+
+    if (!name || !phone || !datetime || !guests || !event) {
+        alert("Harap isi semua form reservasi terlebih dahulu.");
+        return;
+    }
+
+    if (guests < 1) {
+        alert("Jumlah tamu minimal 1 orang.");
+        return;
+    }
+
+    sendWA();
 }
 
 const observer = new IntersectionObserver(entries => {
-entries.forEach(entry => {
-if(entry.isIntersecting){
-entry.target.classList.add('show');
-}
-});
+    entries.forEach(entry => {
+        if(entry.isIntersecting){
+            entry.target.classList.add('show');
+        }
+    });
 });
 
 document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
